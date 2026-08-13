@@ -3,7 +3,7 @@ import { BackHandler, PermissionsAndroid, Platform, StatusBar, View } from 'reac
 import { WebView } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const SITE_URL = 'https://mikefri.github.io/Plein_Ciel/';
+const SITE_URL = 'https://mikefri-studio.github.io/Plein_Ciel/';
 
 const INJECTED = `
 (function () {
