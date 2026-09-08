@@ -1,3 +1,4 @@
+import { maybeRequestReview } from './utils/reviewManager';
 import React, { useEffect, useRef } from 'react';
 import { BackHandler, PermissionsAndroid, Platform, StatusBar, View } from 'react-native';
 import { WebView } from 'react-native-webview';
@@ -32,6 +33,12 @@ async function requestLocationPermission() {
 }
 
 export default function App() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      maybeRequestReview();
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, []);
   const ref = useRef(null);
 
   useEffect(() => {
